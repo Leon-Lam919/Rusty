@@ -7,7 +7,7 @@ fn main(){
 
     let request = &args[1];
     let item = &args[2];
-    let list: [u32: 15];
+    let mut list: Vec<String> = Vec::new();
 
     //TODO: Add "add" command to add a new todo item
     //TODO: Add "list" command to list all todo items
@@ -16,7 +16,6 @@ fn main(){
     
     if (request == "add"){
         println!("Adding a new todo item");
-        list.pop(item);
     } else if (request == "list"){
         println!("Listing all todo items");
     } else if (request == "done"){
