@@ -14,13 +14,15 @@ fn main(){
     //TODO: Add "done" command to mark a todo item as done
     //TODO: Add "edit" command to edit a todo item
     
-    if (request == "add"){
+    if request == "add"{
+        list.push(item.to_string());
         println!("Adding a new todo item");
-    } else if (request == "list"){
+    } else if request == "list"{
         println!("Listing all todo items");
-    } else if (request == "done"){
+        println!("{:?}", list);
+    } else if request == "done"{
         println!("Marking a todo item as done");
-    } else if (request == "edit"){
+    } else if request == "edit"{
         println!("Editing a todo item");
     } else {
         println!("Invalid command");
