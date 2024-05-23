@@ -1,5 +1,5 @@
-use std::fs;
-use std::env;
+
+
 mod read;
 
 fn main(){
@@ -9,7 +9,6 @@ fn main(){
     let item = &args[2];
     let mut list: Vec<String> = Vec::new();
 
-    //TODO: Add "add" command to add a new todo item
     //TODO: Add "list" command to list all todo items
     //TODO: Add "done" command to mark a todo item as done
     //TODO: Add "edit" command to edit a todo item
@@ -17,9 +16,10 @@ fn main(){
     if request == "add"{
         list.push(item.to_string());
         println!("Adding a new todo item");
+        read::write_out("todo.txt", &item);
     } else if request == "list"{
         println!("Listing all todo items");
-        println!("{:?}", list);
+        read::read_in("todo.txt");
     } else if request == "done"{
         println!("Marking a todo item as done");
     } else if request == "edit"{
