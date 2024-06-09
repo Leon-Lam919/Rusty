@@ -18,8 +18,7 @@ fn main(){
         println!("Adding a new todo item");
         read::write_out("todo.txt", &item);
     } else if request == "list"{
-        println!("Listing all todo items");
-        read::read_in("todo.txt");
+        read::list_items("todo.txt");
     } else if request == "done"{
         println!("Marking a todo item as done");
     } else if request == "edit"{

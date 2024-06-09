@@ -22,3 +22,8 @@ pub fn write_out(text: &str, contents: &str){
     file.write_all(contents.as_bytes())
         .expect("Could not write to file");
 }
+
+pub fn list_items(file: &str){
+    println!("Listing all todo items");
+    read_in(file);
+}
