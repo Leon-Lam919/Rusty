@@ -19,10 +19,8 @@ fn main(){
         read::write_out("todo.txt", &item);
     } else if request == "list"{
         read::list_items("todo.txt");
-    } else if request == "done"{
-        println!("Marking a todo item as done");
     } else if request == "edit"{
-        println!("Editing a todo item");
+        read::edit_item("todo.txt", &item);
     } else {
         println!("Invalid command");
     }

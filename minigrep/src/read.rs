@@ -27,3 +27,19 @@ pub fn list_items(file: &str){
     println!("Listing all todo items");
     read_in(file);
 }
+
+pub fn edit_item(file: &str, item: &str){
+    println!("Editing todo item {}", &item);
+    let contents = fs::read_to_string(&file)
+        .expect("Something went wrong reading the file");
+
+    let new_contents = contents.replace(item, "DONE");
+    let mut file = fs::OpenOptions::new()
+        .write(true)
+        .truncate(true)
+        .open(&file)
+        .expect("Could not open file");
+
+    file.write_all(new_contents.as_bytes())
+        .expect("Could not write to file");
+}
