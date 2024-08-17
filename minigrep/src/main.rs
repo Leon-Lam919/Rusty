@@ -5,10 +5,16 @@ fn main(){
     let item = &args[2];
     let mut list: Vec<String> = Vec::new();
 
-    if args.len() <= 2{
-        println!("Not enough arguments");
-        std::process::exit(1);
-    }
+    if args[2] == ""{
+        if args[1] == "list"{
+            return;
+        }
+        else{
+            println!("not enough arguments");
+            std::process::exit(1);
+        }
+    } 
+
 
     //TODO: Add "list" command to list all todo items
     //TODO: Add "done" command to mark a todo item as done
