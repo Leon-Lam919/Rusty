@@ -1,7 +1,4 @@
-
-
 mod read;
-
 fn main(){
     let args: Vec<String> = std::env::args().collect();
 
@@ -9,10 +6,14 @@ fn main(){
     let item = &args[2];
     let mut list: Vec<String> = Vec::new();
 
+    if args.len() < 3{
+        println!("Not enough arguments");
+        std::process::exit(1);
+    }
+
     //TODO: Add "list" command to list all todo items
     //TODO: Add "done" command to mark a todo item as done
     //TODO: Add "edit" command to edit a todo item
-    
     if request == "add"{
         list.push(item.to_string());
         println!("Adding a new todo item");
