@@ -22,7 +22,6 @@ fn main(){
             println!("No item to add");
         }
     } else if request == "list"{
-    // TODO: Add loop to print out list items
         for (index, item) in list.iter().enumerate(){
             println!("{}: {}", index, item);
         }
