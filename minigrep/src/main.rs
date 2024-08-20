@@ -1,36 +1,37 @@
 fn main(){
     let args: Vec<String> = std::env::args().collect();
 
-    let request = &args[1];
-    let item = &args[2];
-    let mut list: Vec<String> = Vec::new();
+    if args.len() < 2{
+        println!("not enough arguments");
+        std::process::exit(1);
+    }
 
-    if args[2] == ""{
-        if args[1] == "list"{
-            return;
-        }
-        else{
-            println!("not enough arguments");
-            std::process::exit(1);
-        }
-    } 
+    let request = &args[1];
+    let item = if args.len() > 2 { Some(&args[2]) } else { None };
+    let mut list: Vec<String> = Vec::new();
 
 
     //TODO: Add "list" command to list all todo items
     //TODO: Add "done" command to mark a todo item as done
     //TODO: Add "edit" command to edit a todo item
     if request == "add"{
-        list.push(item.to_string());
-        println!("Adding a new todo item");
-        //TODO: Add item to list
+        if let Some(item) = item {
+            list.push(item.to_string());
+            println!("Adding a new todo item");
+        } else {
+            println!("No item to add");
+        }
     } else if request == "list"{
     // TODO: Add loop to print out list items
+        for (index, item) in list.iter().enumerate(){
+            println!("{}: {}", index, item);
+        }
     } else if request == "edit"{
         //TODO: Add edit functionality
     } else {
         println!("Invalid command");
     }
 
-    //TODO: Add error handling for the case where the user does not provide enough arguments
     //TODO: Create CLI for TODO app
+
 }
