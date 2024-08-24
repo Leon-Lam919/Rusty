@@ -9,6 +9,7 @@ fn main(){
 
     let request = &args[1];
     let item = if args.len() > 2 { Some(&args[2]) } else { None };
+    let change = if args.len() > 3 { Some(&args[3]) } else { None };
 
     // **Will list all todo items ** 
     if request == "list"{
@@ -89,7 +90,34 @@ fn main(){
     //* edit list
     else if request == "edit"{
         //TODO: Add edit functionality
-    } 
+        let file = OpenOptions::new()
+            .read(true)
+            .open("todo.txt")
+            .expect("Failed to open file");
+        let reader = std::io::BufReader::new(file);
+    
+        let lines: Vec<_> = reader.lines().collect::<Result<_, _>>().expect("Failed to read lines");
+        
+        if lines.is_empty(){
+            println!("Item to edit not found");
+            std::process::exit(1);
+        }else{
+            if let Some(item_name) = item{
+                let mut file = OpenOptions::new()
+                    .write(true)
+                    .truncate(true)
+                    .open("todo.txt")
+                    .expect("Failed to open file");
+
+                    for line in lines{
+                        if line == *item_name{
+                            println!("New item: {}", item_name);
+                        }
+                    }
+                    }
+                }
+            }
+        
     
     else if request == "delete"{
         //TODO: Add delete functionality
