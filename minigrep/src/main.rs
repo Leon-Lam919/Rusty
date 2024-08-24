@@ -109,6 +109,7 @@ fn main(){
                     .open("todo.txt")
                     .expect("Failed to open file");
 
+                    //! finish figuring out the editing functionality
                     for line in lines{
                         if line == *item_name{
                             println!("New item: {}", item_name);
