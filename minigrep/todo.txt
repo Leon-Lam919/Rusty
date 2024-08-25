@@ -1,3 +1,0 @@
-lettuce
-peach
-orange
