@@ -1,130 +1,147 @@
 //TODO: Create CLI for TODO app
 
-use std::io::Write;
-use std::fs::{read, OpenOptions};
-use std::io::BufRead;
+use std::fs::OpenOptions;
+use std::io::{self, BufRead, Write};
 
-fn main(){
+fn main() {
     let args: Vec<String> = std::env::args().collect();
+
+    if args.len() < 2 {
+        println!("Not enough arguments");
+        std::process::exit(1);
+    }
 
     let request = &args[1];
     let item = if args.len() > 2 { Some(&args[2]) } else { None };
     let change = if args.len() > 3 { Some(&args[3]) } else { None };
 
-    // **Will list all todo items ** 
-    if request == "list"{
-        let file = OpenOptions::new()
-            .read(true)
-            .open("todo.txt")
-            .expect("Failed to open file");
-        let reader = std::io::BufReader::new(file);
-        
-        for (index, line) in reader.lines().enumerate(){
-            println!("{}: {}", index + 1, line.unwrap());
+    // Read the file contents into memory
+    let file = OpenOptions::new()
+        .read(true)
+        .open("todo.txt")
+        .expect("Failed to open file");
+    let reader = std::io::BufReader::new(file);
+    let mut lines: Vec<String> = reader.lines().collect::<Result<_, _>>().expect("Failed to read lines");
+
+    // Handle the "list" request
+    if request == "list" {
+        for (index, line) in lines.iter().enumerate() {
+            println!("{}: {}", index + 1, line);
         }
         std::process::exit(0);
     }
 
-    //* add a new todo item ** 
-    if request == "add"{
+    // Handle the "add" request
+    if request == "add" {
         if let Some(item) = item {
-            let mut file = OpenOptions::new()
-                .write(true)
-                .append(true)
-                .create(true)
-                .open("todo.txt")
-                .expect("Failed to open file");
-            writeln!(file, "{}", item).expect("failed to write to file");
+            lines.push(item.to_string());
             println!("Adding a new todo item");
-            std::process::exit(0);
         } else {
             println!("No item to add");
             std::process::exit(1);
         }
     }
 
-    // ** Mark items as complete ** 
-    else if request == "complete"{
-        let file = OpenOptions::new()
-            .read(true)
-            .open("todo.txt")
-            .expect("Failed to open file");
-        let reader = std::io::BufReader::new(file);
-        let lines: Vec<_> = reader.lines().collect::<Result<_, _>>().expect("Failed to read lines");
-        
+    // Handle the "complete" request
+    else if request == "complete" {
         if lines.is_empty() {
             println!("No items to complete");
             std::process::exit(1);
         } else {
-            if let Some(item_name) = item{
-                let mut file = OpenOptions::new()
-                    .write(true)
-                    .truncate(true)
-                    .open("todo.txt")
-                    .expect("Failed to open file");
-                
+            if let Some(item_name) = item {
                 let mut item_found = false;
-                for line in lines{
-                    if line == *item_name{
-                        writeln!(file, "[x] {}", line).expect("Failed to write to file");
+                for line in lines.iter_mut() {
+                    if line == item_name {
+                        *line = format!("[x] {}", line);
                         item_found = true;
-                    } else {
-                        writeln!(file, "{}", line).expect("Failed to write to file");
+                        break;
                     }
                 }
-            
-                if item_found{
+
+                if item_found {
                     println!("Item {} marked as complete", item_name);
-                    std::process::exit(0);
-                } else{
+                } else {
                     println!("Item {} not found", item_name);
                     std::process::exit(1);
                 }
-            } else{
+            } else {
                 println!("No item to complete");
                 std::process::exit(1);
             }
         }
     }
 
-    //* edit list
-    else if request == "edit"{
-        //TODO: Add edit functionality
-        let file = OpenOptions::new()
-            .read(true)
-            .open("todo.txt")
-            .expect("Failed to open file");
-        let reader = std::io::BufReader::new(file);
-    
-        let lines: Vec<_> = reader.lines().collect::<Result<_, _>>().expect("Failed to read lines");
-        
-        if lines.is_empty(){
+    // Handle the "edit" request
+    else if request == "edit" {
+        if lines.is_empty() {
             println!("Item to edit not found");
             std::process::exit(1);
-        }else{
-            if let Some(item_name) = item{
-                let mut file = OpenOptions::new()
-                    .write(true)
-                    .truncate(true)
-                    .open("todo.txt")
-                    .expect("Failed to open file");
-
-                    //! finish figuring out the editing functionality
-                    for line in lines{
-                        if line == *item_name{
-                            println!("New item: {}", item_name);
+        } else {
+            if let Some(item_name) = item {
+                if let Some(new_content) = change {
+                    let mut item_found = false;
+                    for line in lines.iter_mut() {
+                        if line == item_name {
+                            *line = new_content.to_string();
+                            item_found = true;
+                            break;
                         }
                     }
+
+                    if item_found {
+                        println!("Item {} edited successfully", item_name);
+                    } else {
+                        println!("Item {} not found", item_name);
+                        std::process::exit(1);
                     }
+                } else {
+                    println!("No new content provided for the item");
+                    std::process::exit(1);
                 }
+            } else {
+                println!("No item name provided");
+                std::process::exit(1);
             }
-        
-    
-    else if request == "delete"{
-        //TODO: Add delete functionality
+        }
     }
-    else{
+
+    // Handle the "delete" request
+    else if request == "delete" {
+        if lines.is_empty() {
+            println!("No items to delete");
+            std::process::exit(1);
+        } else {
+            if let Some(item_name) = item {
+                let initial_len = lines.len();
+                lines.retain(|line| line != item_name);
+
+                if lines.len() < initial_len {
+                    println!("Item {} deleted successfully", item_name);
+                } else {
+                    println!("Item {} not found", item_name);
+                    std::process::exit(1);
+                }
+            } else {
+                println!("No item name provided");
+                std::process::exit(1);
+            }
+        }
+    }
+
+    // Handle invalid requests
+    else {
         println!("Invalid command");
         std::process::exit(1);
+    }
+
+    // Write the modified data back to the file
+    let mut file = OpenOptions::new()
+        .write(true)
+        .truncate(true)
+        .open("todo.txt")
+        .expect("Failed to open file");
+
+    for line in lines {
+        writeln!(file, "{}", line).expect("Failed to write to file");
     }
 }
