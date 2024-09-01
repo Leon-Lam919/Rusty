@@ -1,0 +1,11 @@
+/home/leon/code/Rusty/pong/target/debug/deps/libcargo_metadata-32abfea4ee39dc1e.rmeta: /home/leon/.cargo/registry/src/index.crates.io-6f17d22bba15001f/cargo_metadata-0.14.2/src/lib.rs /home/leon/.cargo/registry/src/index.crates.io-6f17d22bba15001f/cargo_metadata-0.14.2/src/dependency.rs /home/leon/.cargo/registry/src/index.crates.io-6f17d22bba15001f/cargo_metadata-0.14.2/src/diagnostic.rs /home/leon/.cargo/registry/src/index.crates.io-6f17d22bba15001f/cargo_metadata-0.14.2/src/errors.rs /home/leon/.cargo/registry/src/index.crates.io-6f17d22bba15001f/cargo_metadata-0.14.2/src/messages.rs
+
+/home/leon/code/Rusty/pong/target/debug/deps/libcargo_metadata-32abfea4ee39dc1e.rlib: /home/leon/.cargo/registry/src/index.crates.io-6f17d22bba15001f/cargo_metadata-0.14.2/src/lib.rs /home/leon/.cargo/registry/src/index.crates.io-6f17d22bba15001f/cargo_metadata-0.14.2/src/dependency.rs /home/leon/.cargo/registry/src/index.crates.io-6f17d22bba15001f/cargo_metadata-0.14.2/src/diagnostic.rs /home/leon/.cargo/registry/src/index.crates.io-6f17d22bba15001f/cargo_metadata-0.14.2/src/errors.rs /home/leon/.cargo/registry/src/index.crates.io-6f17d22bba15001f/cargo_metadata-0.14.2/src/messages.rs
+
+/home/leon/code/Rusty/pong/target/debug/deps/cargo_metadata-32abfea4ee39dc1e.d: /home/leon/.cargo/registry/src/index.crates.io-6f17d22bba15001f/cargo_metadata-0.14.2/src/lib.rs /home/leon/.cargo/registry/src/index.crates.io-6f17d22bba15001f/cargo_metadata-0.14.2/src/dependency.rs /home/leon/.cargo/registry/src/index.crates.io-6f17d22bba15001f/cargo_metadata-0.14.2/src/diagnostic.rs /home/leon/.cargo/registry/src/index.crates.io-6f17d22bba15001f/cargo_metadata-0.14.2/src/errors.rs /home/leon/.cargo/registry/src/index.crates.io-6f17d22bba15001f/cargo_metadata-0.14.2/src/messages.rs
+
+/home/leon/.cargo/registry/src/index.crates.io-6f17d22bba15001f/cargo_metadata-0.14.2/src/lib.rs:
+/home/leon/.cargo/registry/src/index.crates.io-6f17d22bba15001f/cargo_metadata-0.14.2/src/dependency.rs:
+/home/leon/.cargo/registry/src/index.crates.io-6f17d22bba15001f/cargo_metadata-0.14.2/src/diagnostic.rs:
+/home/leon/.cargo/registry/src/index.crates.io-6f17d22bba15001f/cargo_metadata-0.14.2/src/errors.rs:
+/home/leon/.cargo/registry/src/index.crates.io-6f17d22bba15001f/cargo_metadata-0.14.2/src/messages.rs:
