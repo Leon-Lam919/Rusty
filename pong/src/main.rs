@@ -12,5 +12,5 @@ impl ggez::event::EventHandler<GameError> for State {
 }
 
 pub fn main(){
-
+    let state = State {};
 }

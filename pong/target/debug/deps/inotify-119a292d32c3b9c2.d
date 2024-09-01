@@ -1,0 +1,12 @@
+/home/leon/code/Rusty/pong/target/debug/deps/libinotify-119a292d32c3b9c2.rmeta: /home/leon/.cargo/registry/src/index.crates.io-6f17d22bba15001f/inotify-0.10.2/src/lib.rs /home/leon/.cargo/registry/src/index.crates.io-6f17d22bba15001f/inotify-0.10.2/src/events.rs /home/leon/.cargo/registry/src/index.crates.io-6f17d22bba15001f/inotify-0.10.2/src/fd_guard.rs /home/leon/.cargo/registry/src/index.crates.io-6f17d22bba15001f/inotify-0.10.2/src/inotify.rs /home/leon/.cargo/registry/src/index.crates.io-6f17d22bba15001f/inotify-0.10.2/src/util.rs /home/leon/.cargo/registry/src/index.crates.io-6f17d22bba15001f/inotify-0.10.2/src/watches.rs
+
+/home/leon/code/Rusty/pong/target/debug/deps/libinotify-119a292d32c3b9c2.rlib: /home/leon/.cargo/registry/src/index.crates.io-6f17d22bba15001f/inotify-0.10.2/src/lib.rs /home/leon/.cargo/registry/src/index.crates.io-6f17d22bba15001f/inotify-0.10.2/src/events.rs /home/leon/.cargo/registry/src/index.crates.io-6f17d22bba15001f/inotify-0.10.2/src/fd_guard.rs /home/leon/.cargo/registry/src/index.crates.io-6f17d22bba15001f/inotify-0.10.2/src/inotify.rs /home/leon/.cargo/registry/src/index.crates.io-6f17d22bba15001f/inotify-0.10.2/src/util.rs /home/leon/.cargo/registry/src/index.crates.io-6f17d22bba15001f/inotify-0.10.2/src/watches.rs
+
+/home/leon/code/Rusty/pong/target/debug/deps/inotify-119a292d32c3b9c2.d: /home/leon/.cargo/registry/src/index.crates.io-6f17d22bba15001f/inotify-0.10.2/src/lib.rs /home/leon/.cargo/registry/src/index.crates.io-6f17d22bba15001f/inotify-0.10.2/src/events.rs /home/leon/.cargo/registry/src/index.crates.io-6f17d22bba15001f/inotify-0.10.2/src/fd_guard.rs /home/leon/.cargo/registry/src/index.crates.io-6f17d22bba15001f/inotify-0.10.2/src/inotify.rs /home/leon/.cargo/registry/src/index.crates.io-6f17d22bba15001f/inotify-0.10.2/src/util.rs /home/leon/.cargo/registry/src/index.crates.io-6f17d22bba15001f/inotify-0.10.2/src/watches.rs
+
+/home/leon/.cargo/registry/src/index.crates.io-6f17d22bba15001f/inotify-0.10.2/src/lib.rs:
+/home/leon/.cargo/registry/src/index.crates.io-6f17d22bba15001f/inotify-0.10.2/src/events.rs:
+/home/leon/.cargo/registry/src/index.crates.io-6f17d22bba15001f/inotify-0.10.2/src/fd_guard.rs:
+/home/leon/.cargo/registry/src/index.crates.io-6f17d22bba15001f/inotify-0.10.2/src/inotify.rs:
+/home/leon/.cargo/registry/src/index.crates.io-6f17d22bba15001f/inotify-0.10.2/src/util.rs:
+/home/leon/.cargo/registry/src/index.crates.io-6f17d22bba15001f/inotify-0.10.2/src/watches.rs:
