@@ -1,9 +1,13 @@
+
 use std::{
     io::{prelude::*, BufReader},
-    net::{TcpListener, TcpStream},
+    {
+    io::{prelude::*, BufReader},
+    net::{{TcpListener, TcpStream},
 };
 
-use actix_web::dev::Response;
+use actix_web::dev::Response, TcpStream}
+};
 
 // func request handler
 // @ Function handle_connection: takes a request and returns a response
@@ -34,10 +38,4 @@ fn handle_connection(mut stream: TcpStream) {
 
 fn main() {
     let listener = TcpListener::bind("127.0.0.1:7878").unwrap();
-
-    for stream in listener.incoming() {
-        let stream = stream.unwrap();
-
-        handle_connection(stream);
-    }
 }
