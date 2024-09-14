@@ -2,34 +2,29 @@ use std::{
     fs,
     io::{prelude::*, BufReader},
     net::{TcpListener, TcpStream},
+    thread,
+    time::Duration,
 };
 
 
 // func request handler
-// @ Function handle_connection: takes a request and returns a response
+// @ Function handle_connection: checking for request and sending response
 
 fn handle_connection(mut stream: TcpStream) {
     let buf_reader = BufReader::new(&mut stream);
-    let http_request: Vec<_> = buf_reader
-        .lines()
-        .map(|result| result.unwrap())
-        .take_while(|line| !line.is_empty())
-        .collect();
-
-    let status_line = "HTTP/1.1 200 OK";
-    let content = fs::read_to_string("hello.html").unwrap();
+    let request_line = buf_reader.lines().next().unwrap().unwrap();
+    
+    let (status_line, filename) = if request_line == "GET / HTTP/1.1"{
+        ("HTTP/1.1 200 OK", "hello.html")
+    }
+    else{
+        ("HTTP/1.1 404 NOT FOUND", "404.html")
+    };
+    let content = fs::read_to_string(filename).unwrap();
     let len = content.len();
-
-    let response = format!(
-        "{}\r\nContent-Length: {}\r\n\r\n{}",
-        status_line, len, content
-    );
-
-    stream.write(response.as_bytes()).unwrap();
+    let response = format!("{}\r\nContent-Length: {}\r\n\r\n{}", status_line, len, content);
+    stream.write_all(response.as_bytes()).unwrap();
 }
-
-// func initalize server function
-// @ Function initalize_server: takes a port number and returns a server
 
 
 // func route request
