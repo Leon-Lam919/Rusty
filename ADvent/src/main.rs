@@ -1,23 +1,39 @@
 use std::fs::File;
 use std::io::{BufReader, Read};
 
-fn main() {
+/* sol 2015-1 
+fn main(){
     let mut str = String::new();
+    let file = File::open("src/input.txt").expect("Error opening file");
 
-    let file = File::open("test.txt").expect("Error opening file");
+    let mut buf = BufReader::new(file);
 
-    let mut buffer_reader = BufReader::new(file);
+    buf.read_to_string(&mut str);
 
-    buffer_reader.read_to_string(&mut str);
+    let mut bal = 0;
+    let mut pos = 0;
 
-    let mut balanace = 0;
-
-    for c in str.chars() {
+    for c in str.chars(){
         if c == '(' {
-            balanace += 1;
-        } else {
-            balanace += 1;
+            bal += 1;
+            pos += 1;
+        } if c == ')'{
+            bal -= 1;
+            pos += 1;
+        }
+        if bal == -1{
+            break;
         }
     }
-    println!("{}", balanace);
+
+    println!("{}", pos);
+} 
+*/
+
+// 2015-2
+fn main(){
+
+    let mut str = String::new();
+    let file = File::open("src/input.txt").expect("Error opening file");
+    
 }
