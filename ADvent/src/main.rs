@@ -1,5 +1,5 @@
 use std::fs::File;
-use std::io::{BufReader, Read};
+use std::io::{self, BufReader, Read};
 
 /* sol 2015-1 
 fn main(){
@@ -31,9 +31,31 @@ fn main(){
 */
 
 // 2015-2
-fn main(){
+
+fn area(l:u32, w:u32, h:u32)-> u32{
+    let mut least = 0;
+    if l < w && l < h{
+        least = l;
+    }else if  w < l && w < h{
+        least = w;
+    }else if h < w && h < l{
+        least = h;
+    }
+
+    
+    l*w*h+least
+
+}
+fn main() -> io::Result<()>{
 
     let mut str = String::new();
-    let file = File::open("src/input.txt").expect("Error opening file");
+    let mut file = File::open("src/input.txt")?;
+    file.read_to_string(&mut str)?;
+
+    let arr: Vec<Vec<i32>> = vec![vec![0; 3];1000];
     
+    let area = area(4, 2, 6);
+    println!("{}", area);
+
+    Ok(())
 }
