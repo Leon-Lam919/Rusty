@@ -6,3 +6,12 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+
+
+[[bin]]
+name = "sol_1"
+path = "src/2024_1/sol_1.rs"
+
+[[bin]]
+name = "sol_2015_1"
+path = "src/2015/sol_1.rs"
