@@ -30,10 +30,27 @@ fn main(){
 } 
 */
 
+fn area(l:u32, w:u32, h:u32) -> u32{
+    let mut least: u32 = 0;
+    least = l.min(w).min(h);
+    (2*l*w)+(2*w*h)+(2*h*l)+least
+}
+
 // 2015-2
 fn main(){
 
     let mut str = String::new();
     let file = File::open("src/input.txt").expect("Error opening file");
     
+    let mut numbers: Vec<u32> = Vec::new();
+    let mut current_number = 0;
+
+    for c in str.chars() {
+        if c.is_ascii_digit(){
+            current_number = current_number *10 + c.to_digit(10).unwrap();
+        }else {
+
+        }
+    }
+    println!("{}", current_number);
 }
