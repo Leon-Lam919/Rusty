@@ -1,0 +1,8 @@
+/home/leon/code/Rusty/HTTP_server/target/debug/deps/libnum_cpus-b9bdf94374b7a3ae.rmeta: /home/leon/.cargo/registry/src/index.crates.io-6f17d22bba15001f/num_cpus-1.16.0/src/lib.rs /home/leon/.cargo/registry/src/index.crates.io-6f17d22bba15001f/num_cpus-1.16.0/src/linux.rs
+
+/home/leon/code/Rusty/HTTP_server/target/debug/deps/libnum_cpus-b9bdf94374b7a3ae.rlib: /home/leon/.cargo/registry/src/index.crates.io-6f17d22bba15001f/num_cpus-1.16.0/src/lib.rs /home/leon/.cargo/registry/src/index.crates.io-6f17d22bba15001f/num_cpus-1.16.0/src/linux.rs
+
+/home/leon/code/Rusty/HTTP_server/target/debug/deps/num_cpus-b9bdf94374b7a3ae.d: /home/leon/.cargo/registry/src/index.crates.io-6f17d22bba15001f/num_cpus-1.16.0/src/lib.rs /home/leon/.cargo/registry/src/index.crates.io-6f17d22bba15001f/num_cpus-1.16.0/src/linux.rs
+
+/home/leon/.cargo/registry/src/index.crates.io-6f17d22bba15001f/num_cpus-1.16.0/src/lib.rs:
+/home/leon/.cargo/registry/src/index.crates.io-6f17d22bba15001f/num_cpus-1.16.0/src/linux.rs:
