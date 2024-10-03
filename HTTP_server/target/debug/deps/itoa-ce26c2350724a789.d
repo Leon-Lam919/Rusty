@@ -1,8 +1,0 @@
-/home/leon/code/Rusty/HTTP_server/target/debug/deps/libitoa-ce26c2350724a789.rmeta: /home/leon/.cargo/registry/src/index.crates.io-6f17d22bba15001f/itoa-1.0.11/src/lib.rs /home/leon/.cargo/registry/src/index.crates.io-6f17d22bba15001f/itoa-1.0.11/src/udiv128.rs
-
-/home/leon/code/Rusty/HTTP_server/target/debug/deps/libitoa-ce26c2350724a789.rlib: /home/leon/.cargo/registry/src/index.crates.io-6f17d22bba15001f/itoa-1.0.11/src/lib.rs /home/leon/.cargo/registry/src/index.crates.io-6f17d22bba15001f/itoa-1.0.11/src/udiv128.rs
-
-/home/leon/code/Rusty/HTTP_server/target/debug/deps/itoa-ce26c2350724a789.d: /home/leon/.cargo/registry/src/index.crates.io-6f17d22bba15001f/itoa-1.0.11/src/lib.rs /home/leon/.cargo/registry/src/index.crates.io-6f17d22bba15001f/itoa-1.0.11/src/udiv128.rs
-
-/home/leon/.cargo/registry/src/index.crates.io-6f17d22bba15001f/itoa-1.0.11/src/lib.rs:
-/home/leon/.cargo/registry/src/index.crates.io-6f17d22bba15001f/itoa-1.0.11/src/udiv128.rs:
